@@ -1,0 +1,9 @@
+/user/node_modules/
+/gateway/node_modules/
+/product/node_modules/
+/admin/node_modules/
+
+/user/dist/
+/gateway/dist/
+/product/dist/
+/admin/dist/

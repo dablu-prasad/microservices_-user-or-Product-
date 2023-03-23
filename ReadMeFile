@@ -1,0 +1,106 @@
+Steps1:
+-------------
+docker build --tag user-docker .
+Steps2:
+-----------
+docker run --name express-api -d -p 4004:4004 user-docker
+Step3:
+-------
+docker ps
+
+Step4:
+--------
+docker images
+
+steps5:
+  -----------
+docker exec -it containerId bash              
+    --pwd
+    --ls
+Steps6:
+---------------
+docker system prune -f     (-- for stop all images in stoped contaier)
+
+sudo netstat -ltnp | grep ':5432'  
+
+sudo service postgresql stop           ---for stop file
+
+sudo rm -rf data       --for remove file
+
+docker rmi img_name     ---for remove all images
+
+-- for stop running port
+sudo ss -lptn 'sport = :5432'  (-- run this port or got pid)
+
+sudo kill <pid>
+
+sudo lsof -i  :4004
+
+kill -9 11101
+
+docker-compose up --build -d
+
+docker-compose down
+
+docker exec -it <container-Id> bash
+
+docker ps -a
+
+docker images
+
+  systemctl status postgresql
+
+  sudo service postgresql start
+
+create user dablu with password 'dablu';       (for create user and pass in postgres)
+
+create database userdb;            (for create db)
+ 
+grant all privileges on database userdb to dablu;   (-- for grant all privilages database to users)
+
+create database productdb;
+
+grant all privileges on database productdb to dablu;
+
+-------------------------------
+
+npm install db-migrate-pg
+
+db-migrate create initialize
+
+
+--cmd in postgres docker psql-------
+
+psql -h db -U tuser
+
+password :linexc
+
+\c sales    (-- cmd to change database)
+\dt         (-- for all database table display)
+\d          (-- for check relations)
+\dx
+select * from pg_extension;    (-- for see pg_extension)
+select * from pg_foreign_server;
+
+select * from productdb.public.products;
+
+create extension dblink;
+\dx
+create server testmachine02_dblink foreign data wrapper dblink_fdw options (dbname 'productdb', host 'db', port '5432');
+\des+
+select * from pg_user_mappings;
+
+
+
+select * from pg_foreign_server;
+
+--logs-----
+docker-compose logs
+
+----for postgres query on terminal-------------
+
+1) sudo su postgres
+2) psql
+3) create database -->dbname<--;
+
+
