@@ -104,3 +104,12 @@ docker-compose logs
 3) create database -->dbname<--;
 
 
+
+------------------------------
+--for restore commit ------------
+
+git reflog      (-- to see logs)
+git reset --hard a7d2593    (-- to revert last commit) 
+
+
+
